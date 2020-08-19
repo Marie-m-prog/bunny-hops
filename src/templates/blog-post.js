@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 const BlogPost = ({data}) => {
     return (
         <div>
-            <h1>{data.beer.recipeInfo.name}</h1>
+            <h1>{data.beer.recipeInfo.RECIPE.NAME}</h1>
             <p>Beer info</p>
         </div>
     )
@@ -19,9 +19,9 @@ export const pageQuery = graphql`
             batchSize
             fermentables
             recipeInfo {
-                alcohol
-                name
-                type
+                RECIPE {
+                    NAME
+                }
             }
         }
     }

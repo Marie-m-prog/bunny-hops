@@ -7,10 +7,12 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.41",
+    "gatsby-background-image": "^1.1.2",
     "gatsby-cli": "^2.12.87",
     "gatsby-image": "^2.4.15",
     "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-offline": "^3.2.23",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.26",
     "gatsby-source-contentful": "^2.3.37",
@@ -23,7 +25,8 @@
     "slash": "^3.0.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "tailwindcss": "^1.7.1"
   },
   "keywords": [
     "gatsby"

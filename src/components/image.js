@@ -1,32 +1,34 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import styles from './image.module.css'
+import BackgroundImage from 'gatsby-background-image'
 
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      placeholderImage: file(relativePath: { eq: "radovan-unsplash.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  const imageData = data.placeholderImage.childImageSharp.fluid;
+  return (
+    <BackgroundImage
+      Tag='section'
+      className={styles.heroImage} 
+      fluid={imageData} 
+    >
+      <div className={styles.heroDetails}>
+        <h3 className={styles.heroHeadline}>Welcome to Bunnyhops</h3>
+        <p>We sell handcrafted beer in Stockholm.</p>
+      </div>
+    </BackgroundImage>
+  )
 }
 
 export default Image

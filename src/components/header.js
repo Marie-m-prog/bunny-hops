@@ -5,11 +5,10 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#333`,
     }}
   >
-    <div
+    <nav
       style={{
         margin: `0 auto`,
         maxWidth: 960,
@@ -27,7 +26,37 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-    </div>
+      <Link
+        to={`/about/`}
+        style={{
+          float: `right`,
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+        About
+      </Link>
+      <Link
+        to={`/contact/`}
+        style={{
+          float: `right`,
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+        Contact
+      </Link>
+      <Link
+        to={`/beer/`}
+        style={{
+          float: `right`,
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+        Our Beer
+      </Link>
+    </nav>
   </header>
 )
 
