@@ -2,7 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from './header'
+import Footer from './footer';
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -24,14 +25,11 @@ const Layout = ({ children }) => {
           // maxWidth: 960,
           // padding: `0 1.0875rem 1.45rem`,
         }}
+        className='flex flex-col min-h-screen'
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <main className='max-w-3xl mx-auto text-center'>{children}</main>
       </div>
+      <Footer />
     </>
   )
 }

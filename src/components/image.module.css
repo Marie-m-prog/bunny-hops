@@ -1,6 +1,5 @@
 .hero {
     position: relative;
-    
     text-align: center;
   }
   
@@ -9,9 +8,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 61.8vh;
-    max-height: 400px;
+    height: 70vh;
+    max-height: 500px;
     overflow: hidden;
+    background-position: center top;
   }
   
   .heroDetails {
@@ -19,8 +19,12 @@
     color: #fff;
     left: 50%;
     transform: translate(-50%, 0);
-    font-size: 14px;
-    padding: 0 0.5em;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
   
   @media(min-width: 600px) {
@@ -36,7 +40,8 @@
   }
   
   .heroHeadline {
-    margin: 0;
+    margin: 0.5em;
+    font-size: 2.5em;
   }
   
   .heroTitle {
