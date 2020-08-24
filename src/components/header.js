@@ -37,12 +37,12 @@ const Header = ({ siteTitle }) => (
           >
             Contact
           </Link>
-          <Link
+          {/* <Link
             to={`/beer/`}
             className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4'
           >
             Our Beer
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

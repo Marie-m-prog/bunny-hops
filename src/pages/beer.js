@@ -19,33 +19,33 @@ const BeerList = ({data}) => (
 
 export default BeerList
 
-export const query = graphql`
-query {
-  allContentfulBeer {
-    edges {
-      node {
-        id
-        slug
-        image {
-          fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
-            ...GatsbyContentfulFluid_tracedSVG
-          }
-        }
-        recipe {
-          data {
-            RECIPES {
-              RECIPE {
-                NAME
-                STYLE {
-                  NAME
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
+// export const query = graphql`
+// query {
+//   allContentfulBeer {
+//     edges {
+//       node {
+//         id
+//         slug
+//         image {
+//           fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
+//             ...GatsbyContentfulFluid_tracedSVG
+//           }
+//         }
+//         recipe {
+//           data {
+//             RECIPES {
+//               RECIPE {
+//                 NAME
+//                 STYLE {
+//                   NAME
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `
 
