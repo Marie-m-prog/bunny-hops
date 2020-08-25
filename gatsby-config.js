@@ -27,7 +27,9 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
     },
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,9 +37,15 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-postcss`,
+    {
+      resolve:`gatsby-transformer-sharp`,
+    },
+    {
+      resolve:`gatsby-plugin-sharp`,
+    },
+    {
+      resolve:`gatsby-plugin-postcss`,
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

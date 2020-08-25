@@ -82,49 +82,49 @@ const BlogPost = ({data}) => {
 
 export default BlogPost
 
-export const pageQuery = graphql`
-	query ($slug: String!){
-		beer: contentfulBeer(slug: {eq: $slug}) {
-			slug
-			description {
-				description
-			}
-			recipe {
-				data {
-					RECIPES {
-						RECIPE {
-							NAME
-							STYLE {
-								NAME
-							}
-							EST_ABV
-							FERMENTABLES {
-								FERMENTABLE {
-									NAME
-									AMOUNT
-									TYPE
-									YIELD
-								}
-							}
-							HOPS {
-								HOP {
-									AMOUNT
-									FORM
-									NAME
-									TIME
-									USE
-								}
-							}
-						}
-					}
-				}
+// export const pageQuery = graphql`
+// 	query ($slug: String!){
+// 		beer: contentfulBeer(slug: {eq: $slug}) {
+// 			slug
+// 			description {
+// 				description
+// 			}
+// 			recipe {
+// 				data {
+// 					RECIPES {
+// 						RECIPE {
+// 							NAME
+// 							STYLE {
+// 								NAME
+// 							}
+// 							EST_ABV
+// 							FERMENTABLES {
+// 								FERMENTABLE {
+// 									NAME
+// 									AMOUNT
+// 									TYPE
+// 									YIELD
+// 								}
+// 							}
+// 							HOPS {
+// 								HOP {
+// 									AMOUNT
+// 									FORM
+// 									NAME
+// 									TIME
+// 									USE
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
 
-			}
-			image {
-				fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
-					...GatsbyContentfulFluid_tracedSVG
-				}
-			}
-		}
-	}
-`
+// 			}
+// 			image {
+// 				fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
+// 					...GatsbyContentfulFluid_tracedSVG
+// 				}
+// 			}
+// 		}
+// 	}
+// `
