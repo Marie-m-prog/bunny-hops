@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const ContactPage = ({ data }) => (
   <Layout>
     <SEO title="Contact" />
-    <h1>Get in touch</h1>
+    <h1 className='mb-8'>Get in touch</h1>
       <p>Interested in our beer, and want to get in touch?</p> 
       <p>Contact us on mail <a href='bunnyhops@hops.se'>bunnyhops@hops.se</a></p>
   </Layout>

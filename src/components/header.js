@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className='bg-gray-900'>
+  <header className='bg-header-gray'>
     <nav
       style={{
         margin: `0 auto`,

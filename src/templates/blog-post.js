@@ -8,8 +8,8 @@ const BlogPost = ({data}) => {
 	console.log(RECIPE.FERMENTABLES)
 	return (
 		<Layout>
-			<div className='border rounded flex'>
-				<div className='w-6/12 m-4'>
+			<div className='flex'>
+				<div className='w-6/12'>
 					<Img className='w-full w-1/2 rounded-md' fluid={data.beer.image.fluid} alt='test'/>
 				</div>
 				<div className='m-8 text-left w-1/2'>
@@ -20,10 +20,10 @@ const BlogPost = ({data}) => {
 				</div>
 			</div>
 			<h1 className='my-8 text-left'>Brewing details</h1>
-			<div className='border'>
+			<div>
 				<div>
 					<h3 className='text-left'>Fermentables</h3>
-					<table className="table-auto text-xs">
+					<table className="w-2/3 table-auto text-xs">
 						<thead>
 							<tr>
 								<th className="p-0">Amount</th>
