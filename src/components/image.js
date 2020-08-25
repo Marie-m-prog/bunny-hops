@@ -4,17 +4,17 @@ import styles from './image.module.css'
 import BackgroundImage from 'gatsby-background-image'
 
 const Image = ({siteTitle}) => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     placeholderImage: file(relativePath: { eq: "radovan-unsplash.jpg" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 1920) {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "radovan-unsplash.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const imageData = data.placeholderImage.childImageSharp.fluid;
   return (
     <div className={`${styles.hero}`}>
