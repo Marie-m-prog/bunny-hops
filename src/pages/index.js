@@ -8,9 +8,10 @@ import BeerPreview from '../components/beer-preview';
 
 const IndexPage = ({ data }) => (
   <div>
-    <Header siteTitle={data.allContentfulSiteMetadata.edges.node.title} />
+    {console.log(data)}
+    <Header siteTitle={data.site.siteMetadata.title} />
     <SEO title="Home" />
-    <Hero siteTitle={data.allContentfulSiteMetadata.edges.node.title}/>
+    <Hero siteTitle={data.site.siteMetadata.title}/>
     <div>
       <h1 className='text-center mt-6'>Our selection of craft beer</h1>
       <hr className='border-none h-px bg-gradient-to-r from-white via-gray-600 to-white w-4/5 mx-auto my-4'></hr>
@@ -34,6 +35,11 @@ export default IndexPage
 
 export const query = graphql`
 query {
+  site {
+    siteMetadata {
+      title
+    }
+  }
   allContentfulBeer {
     edges {
       node {
@@ -54,13 +60,6 @@ query {
             }
           }
         }
-      }
-    }
-  }
-  allContentfulSiteMetadata {
-    edges {
-      node {
-        title
       }
     }
   }
