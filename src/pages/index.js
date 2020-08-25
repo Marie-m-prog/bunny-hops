@@ -1,59 +1,68 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Hero from '../components/image'
 
-import Layout from '../components/layout'
+import Header from '../components/header'
+import Footer from '../components/footer';
 import SEO from '../components/seo'
+import BeerPreview from '../components/beer-preview';
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <div>
+    <Header siteTitle={data.site.siteMetadata.title} />
     <SEO title="Home" />
-    <Hero />
-    <h1>Our selection of craft beer</h1>
-    <div className='index-page'>
-      
-      {data.allContentfulBeer.edges.map(({node}) => (
-        <div key={node.id} className='card max-w-sm rounded overflow-hidden shadow-lg'>
-          <Link to={`/beer/${node.slug}`}>
-            <img className='w-full' src={node.image.file.url} alt='test'></img>
-            <div className='px-6 py-4'>
-              <div className='font-bold text-xl mb-2'>{node.recipeInfo.RECIPE.NAME}</div>
-              <p className='text-gray-700 text-base'>{node.recipeInfo.RECIPE.STYLE.NAME}</p>
+    <Hero siteTitle={data.site.siteMetadata.title}/>
+    <div>
+      <h1 className='text-center mt-6'>Our selection of craft beer</h1>
+      <hr className='border-none h-px bg-gradient-to-r from-white via-gray-600 to-white w-4/5 mx-auto my-4'></hr>
+      <ul className='flex justify-center flex-wrap mb-6 w-full'>
+        {data.allContentfulBeer.edges.map(({node})=> {
+          return (
+            <div>
+              <li key={node.id}>
+                <BeerPreview data={node}/>
+              </li>
             </div>
-          </Link>
-        </div>
-      ))}
+          )
+        })}
+      </ul>
     </div>
-  </Layout>
+    <Footer />
+  </div>
 )
 
 export default IndexPage
 
 export const query = graphql`
 query {
-   allContentfulBeer {
-     edges {
-       node {
-         batchSize
-         fermentables
-         id
-         slug
-         recipeInfo {
-          RECIPE {
-            NAME
-            BATCH_SIZE
-            STYLE {
-              NAME
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allContentfulBeer {
+    edges {
+      node {
+        id
+        slug
+        image {
+          fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+        recipe {
+          data {
+            RECIPES {
+              RECIPE {
+                NAME
+                STYLE {
+                  NAME
+                }
+              }
             }
           }
         }
-        image {
-          file {
-            url
-          }
-        }
-       }
-     }
-   }
- }
- `
+      }
+    }
+  }
+}
+`

@@ -13,13 +13,3 @@ const ContactPage = ({ data }) => (
 )
 
 export default ContactPage
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
