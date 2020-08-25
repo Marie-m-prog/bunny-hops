@@ -25,9 +25,9 @@ const Layout = ({ children }) => {
           // maxWidth: 960,
           // padding: `0 1.0875rem 1.45rem`,
         }}
-        className='flex flex-col min-h-screen'
+        className='min-h-screen'
       >
-        <main className='max-w-3xl mx-auto text-center'>{children}</main>
+        <main className='max-w-3xl mx-auto mt-6 text-center'>{children}</main>
       </div>
       <Footer />
     </>

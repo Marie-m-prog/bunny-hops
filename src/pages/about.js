@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const AboutPage = ({ data }) => (
   <Layout>
     <SEO title="About" />
-    <h1 className='p-6'>About {data.site.siteMetadata.title}</h1>
+    <h1>About {data.site.siteMetadata.title}</h1>
       <p>
         We're a local Swedish brewery from Stockholm. Try out our crafted beers named after traditional Swedish proverbs and invented words. 
       </p>

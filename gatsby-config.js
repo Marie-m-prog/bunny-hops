@@ -18,7 +18,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: `Bunnyhops`,
+    title: `Bunny Hops`,
     description: `View Bunnyhops selection of crafted beer.`,
     author: `@marie-m-prog`,
   },

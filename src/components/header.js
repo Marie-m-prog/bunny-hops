@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.1rem`,
       }}
       className='flex items-center justify-between flex-wrap p-6'
     >
@@ -37,12 +37,12 @@ const Header = ({ siteTitle }) => (
           >
             Contact
           </Link>
-          {/* <Link
+          <Link
             to={`/beer/`}
             className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4'
           >
             Our Beer
-          </Link> */}
+          </Link>
         </div>
       </div>
     </nav>
