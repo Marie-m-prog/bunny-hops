@@ -3,19 +3,23 @@ import { useStaticQuery, graphql } from "gatsby"
 import styles from './image.module.css'
 import BackgroundImage from 'gatsby-background-image'
 
-const Image = ({siteTitle}) => {
+const Image = ({siteTitle, headerText}) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "radovan-unsplash.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1920) {
-            ...GatsbyImageSharpFluid
+      allContentfulSiteMetadata {
+        edges {
+          node {
+            headerImage {
+              fluid(maxWidth: 1920) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
           }
         }
       }
     }
   `)
-  const imageData = data.placeholderImage.childImageSharp.fluid;
+  const imageData = data.allContentfulSiteMetadata.edges[0].node.headerImage.fluid;
   return (
     <div className={`${styles.hero}`}>
       <BackgroundImage
@@ -25,7 +29,7 @@ const Image = ({siteTitle}) => {
       >
         <div className={`${styles.heroDetails}`}>
           <h3 className={styles.heroHeadline}>{`Welcome to ${siteTitle}`}</h3>
-          <p>We sell hand crafted beer in Stockholm.</p>
+          <p>{headerText}</p>
         </div>
       </BackgroundImage>
     </div>

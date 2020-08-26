@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         }}
         className='min-h-screen'
       >
-        <main className='max-w-3xl mx-auto mt-6 text-center'>{children}</main>
+        <main className='mx-auto mt-6 text-center max-w-3xl'>{children}</main>
       </div>
       <Footer />
     </>

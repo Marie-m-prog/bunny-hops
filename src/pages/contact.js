@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ContactPage = ({ data }) => (
+const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <h1 className='mb-8'>Get in touch</h1>

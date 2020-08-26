@@ -7,6 +7,10 @@ module.exports = {
        '3/4': '75%',
        'full': '100%',
       },
+      maxWidth: {
+        'logo': '4rem',
+        '3xl': '48rem',
+      },
       extend: {
         colors: {
           'header-gray': '#202124',

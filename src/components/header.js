@@ -1,8 +1,26 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulSiteMetadata {
+        edges {
+          node {
+            logo {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
+  return (
   <header className='bg-header-gray'>
     <nav
       style={{
@@ -10,36 +28,33 @@ const Header = ({ siteTitle }) => (
         maxWidth: 960,
         padding: `1.1rem`,
       }}
-      className='flex items-center justify-between flex-wrap p-6'
+      className='flex items-center justify-between p-6'
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+        
+      <div className='max-w-logo flex-row-reverse sm:items-center sm:w-auto'>
+        <Link to="/">
+          <img src={data.allContentfulSiteMetadata.edges[0].node.logo.file.url} alt='logo'></img>
         </Link>
-      </h1>
-      <div className='w-full flex-row-reverse lg:flex lg:items-center lg:w-auto'>
-        <div className='text-sm lg:flex-grow'>
+      </div>
+        
+
+      <div className='w-full flex-row-reverse sm:items-center sm:w-auto'>
+        <div className='text-sm'>
           <Link
             to={`/about/`}
-            className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4'
+            className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-yellow-400 mr-4'
           >
             About
           </Link>
           <Link
             to={`/contact/`}
-            className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4'
+            className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-yellow-400 mr-4'
           >
             Contact
           </Link>
           <Link
             to={`/beer/`}
-            className='block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4'
+            className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-yellow-400 mr-4'
           >
             Our Beer
           </Link>
@@ -47,14 +62,29 @@ const Header = ({ siteTitle }) => (
       </div>
     </nav>
   </header>
-)
+)}
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header
+
+// export const query = graphql`
+// query {
+//   allContentfulSiteMetadata {
+//     edges {
+//       node {
+//         logo {
+//           fluid(maxWidth: 50, maxHeight: 50, resizingBehavior: FILL) {
+//             ...GatsbyContentfulFluid_tracedSVG
+//           }
+//         }
+//       }
+//     }
+//   }
+// }`

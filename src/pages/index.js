@@ -6,12 +6,13 @@ import Footer from '../components/footer';
 import SEO from '../components/seo'
 import BeerPreview from '../components/beer-preview';
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
+  const title = data.allContentfulSiteMetadata.edges[0].node.title;
+  return (
   <div>
-    {console.log(data)}
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header />
     <SEO title="Home" />
-    <Hero siteTitle={data.site.siteMetadata.title}/>
+    <Hero siteTitle={title} headerText={data.allContentfulSiteMetadata.edges[0].node.headerText.headerText}/>
     <div>
       <h1 className='text-center mt-6'>Our selection of craft beer</h1>
       <hr className='border-none h-px bg-gradient-to-r from-white via-gray-600 to-white w-4/5 mx-auto my-4'></hr>
@@ -29,15 +30,25 @@ const IndexPage = ({ data }) => (
     </div>
     <Footer />
   </div>
-)
+)}
 
 export default IndexPage
 
 export const query = graphql`
 query {
-  site {
-    siteMetadata {
-      title
+  allContentfulSiteMetadata {
+    edges {
+      node {
+        title
+        headerText {
+          headerText
+        }
+        logo {
+          file {
+            url
+          }
+        }
+      }
     }
   }
   allContentfulBeer {
