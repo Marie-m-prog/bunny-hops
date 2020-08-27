@@ -1,5 +1,4 @@
 require('dotenv').config({
-  // path: `.env.${process.env.NODE_ENV}`,
   path: '.env',
 });
 
@@ -12,7 +11,7 @@ const { spaceId, accessToken } = contentfulConfig;
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    "Contentful spaceId and the access token need to be provided."
+    'Contentful spaceId and the access token need to be provided.'
   );
 }
 
@@ -49,17 +48,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `bunny-hops`,
+        short_name: `bunny-hops`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#202124`,
+        theme_color: `#202124`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bunny-logo.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

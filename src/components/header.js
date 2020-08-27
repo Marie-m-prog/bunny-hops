@@ -1,7 +1,6 @@
-import { Link } from "gatsby"
-import React from "react"
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -19,7 +18,6 @@ const Header = () => {
       }
     }
   `)
-  console.log(data)
   return (
   <header className='bg-header-gray'>
     <nav
@@ -32,7 +30,7 @@ const Header = () => {
     >
         
       <div className='max-w-logo flex-row-reverse sm:items-center sm:w-auto'>
-        <Link to="/">
+        <Link to={`/`}>
           <img src={data.allContentfulSiteMetadata.edges[0].node.logo.file.url} alt='logo'></img>
         </Link>
       </div>
@@ -64,27 +62,4 @@ const Header = () => {
   </header>
 )}
 
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
-
 export default Header
-
-// export const query = graphql`
-// query {
-//   allContentfulSiteMetadata {
-//     edges {
-//       node {
-//         logo {
-//           fluid(maxWidth: 50, maxHeight: 50, resizingBehavior: FILL) {
-//             ...GatsbyContentfulFluid_tracedSVG
-//           }
-//         }
-//       }
-//     }
-//   }
-// }`

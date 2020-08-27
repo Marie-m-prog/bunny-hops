@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
   <div>
     <Header />
-    <SEO title="Home" />
+    <SEO title='Home' />
     <Hero siteTitle={title} headerText={data.allContentfulSiteMetadata.edges[0].node.headerText.headerText}/>
     <div>
       <h1 className='text-center mt-6'>Our selection of craft beer</h1>

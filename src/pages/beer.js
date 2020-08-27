@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import BeerPreview from '../components/beer-preview'
 import Header from '../components/header'
 import Footer from '../components/footer';

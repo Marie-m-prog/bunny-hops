@@ -1,5 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styles from './image.module.css'
 import BackgroundImage from 'gatsby-background-image'
 

@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Contact" />
+    <SEO title='Contact' />
     <h1 className='mb-8'>Get in touch</h1>
       <p>Interested in our beer, and want to get in touch?</p> 
-      <p>Contact us on mail <a href='bunnyhops@hops.se'>bunnyhops@hops.se</a></p>
+      <p>Contact us on mail <a href='mailto:almroth.ulrik@gmail.com'>bunnyhops@hops.se</a></p>
   </Layout>
 )
 

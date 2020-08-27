@@ -37,22 +37,22 @@ const BlogPost = ({data}) => {
 					<table className="w-2/3 table-auto text-xs">
 						<thead>
 							<tr>
-								<th className="p-0">Amount</th>
-								<th className="p-0">Fermentable</th>
-								<th className="p-0">Type</th>
-								<th className="p-0">°L</th>
-								<th className="p-0">Bill %</th>
+								<th className='p-0'>Amount</th>
+								<th className='p-0'>Fermentable</th>
+								<th className='p-0'>Type</th>
+								<th className='p-0'>°L</th>
+								<th className='p-0'>Bill %</th>
 							</tr>
 						</thead>
 						<tbody>
 							{recipe.fermentables.fermentable.map((td)=> {
 								return (
 									<tr>
-										<td className="border">{`${td.amount} kg`}</td>
-										<td className="border">{td.name}</td>
-										<td className="border">{td.type}</td>
-										<td className="border">{td.color}</td>
-										<td className="border">
+										<td className='border'>{`${td.amount} kg`}</td>
+										<td className='border'>{td.name}</td>
+										<td className='border'>{td.type}</td>
+										<td className='border'>{td.color}</td>
+										<td className='border'>
 											{`${calculateBill(recipe.fermentables.fermentable, td.amount)} %`}
 										</td>
 								</tr>
@@ -64,27 +64,27 @@ const BlogPost = ({data}) => {
 				<div>
 					<div>
 						<h3 className='text-left'>Hops</h3>
-						<table className="table-auto text-xs">
+						<table className='table-auto text-xs'>
 						<thead>
 							<tr>
-								<th className="p-0">Amount</th>
-								<th className="p-0">Variety</th>
-								<th className="p-0">Type</th>
-								<th className="p-0">Use</th>
-								<th className="p-0">Time</th>
-								<th className="p-0">Bill %</th>
+								<th className='p-0'>Amount</th>
+								<th className='p-0'>Variety</th>
+								<th className='p-0'>Type</th>
+								<th className='p-0'>Use</th>
+								<th className='p-0'>Time</th>
+								<th className='p-0'>Bill %</th>
 							</tr>
 						</thead>
 						<tbody>
 							{recipe.hops.hop.map((hop) => {
 								return (
 									<tr>
-										<td className="border">{`${hop.amount*1000} g`}</td>
-										<td className="border">{hop.name}</td>
-										<td className="border">{hop.form}</td>
-										<td className="border">{hop.use}</td>
-										<td className="border">{`${hop.time} min`}</td>
-										<td className="border">{`${calculateBill(recipe.hops.hop, hop.amount)} %`}</td>
+										<td className='border'>{`${hop.amount*1000} g`}</td>
+										<td className='border'>{hop.name}</td>
+										<td className='border'>{hop.form}</td>
+										<td className='border'>{hop.use}</td>
+										<td className='border'>{`${hop.time} min`}</td>
+										<td className='border'>{`${calculateBill(recipe.hops.hop, hop.amount)} %`}</td>
 								</tr>
 								)
 							})}
@@ -93,27 +93,27 @@ const BlogPost = ({data}) => {
 					</div>
 					<div>
 						<h3 className='text-left'>Yeasts</h3>
-						<table className="table-auto text-xs">
+						<table className='table-auto text-xs'>
 						<thead>
 							<tr>
-								<th className="p-0">Amount</th>
-								<th className="p-0">Variety</th>
-								<th className="p-0">Type</th>
-								<th className="p-0">Use</th>
-								<th className="p-0">Time</th>
-								<th className="p-0">Bill %</th>
+								<th className='p-0'>Amount</th>
+								<th className='p-0'>Variety</th>
+								<th className='p-0'>Type</th>
+								<th className='p-0'>Use</th>
+								<th className='p-0'>Time</th>
+								<th className='p-0'>Bill %</th>
 							</tr>
 						</thead>
 						<tbody>
 							{recipe.hops.hop.map((hop) => {
 								return (
 									<tr>
-										<td className="border">{`${hop.amount*1000} g`}</td>
-										<td className="border">{hop.name}</td>
-										<td className="border">{hop.form}</td>
-										<td className="border">{hop.use}</td>
-										<td className="border">{`${hop.time} min`}</td>
-										<td className="border">{`${calculateBill(recipe.hops.hop, hop.amount)} %`}</td>
+										<td className='border'>{`${hop.amount*1000} g`}</td>
+										<td className='border'>{hop.name}</td>
+										<td className='border'>{hop.form}</td>
+										<td className='border'>{hop.use}</td>
+										<td className='border'>{`${hop.time} min`}</td>
+										<td className='border'>{`${calculateBill(recipe.hops.hop, hop.amount)} %`}</td>
 								</tr>
 								)
 							})}
