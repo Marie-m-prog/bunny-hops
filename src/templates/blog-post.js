@@ -24,14 +24,30 @@ const BlogPost = ({data}) => {
 					<p className='my-8'>{data.beer.description.description}</p>
 				</div>
 			</div>
-			<div>
-				<p>Original Gravity: <span>{recipe.og}</span></p>
-				<p>Final Gravity: <span>{recipe.fg}</span></p>
-				<p>ABV: <span>{`${recipe.est_abv} %`}</span></p>
-				<p>SRM: <span>{recipe.est_color}</span></p>
+			<div className='flex justify-between text-2xl m-8'>
+				<div className='flex-col border-r-2 border-gray-600 pr-6'>
+					<p>Original Gravity: </p>
+					<p className='font-bold'>{recipe.og}</p>
+				</div>
+				<div className='flex-col border-r-2 border-gray-600 pr-6'>
+					<p>Final Gravity: </p>
+					<p className='font-bold'>{recipe.fg}</p>
+				</div>
+				<div className='flex-col border-r-2 border-gray-600 pr-6'>
+					<p>ABV: </p>
+					<p className='font-bold'>{`${recipe.est_abv} %`}</p>
+				</div>
+				<div className='flex-col border-r-2 border-gray-600 pr-6'>
+					<p>IBU: </p>
+					<p className='font-bold'>{`${recipe.ibu}`}</p>
+				</div>
+				<div className=''>
+					<p>SRM: </p>
+					<p className='font-bold'>{recipe.est_color}</p>
+				</div>	
 			</div>
 			<h1 className='my-8 text-left'>Brewing details</h1>
-			<div>
+			<div className='mb-20'>
 				<div>
 					<h3 className='text-left'>Fermentables</h3>
 					<table className="w-2/3 table-auto text-xs">
@@ -92,31 +108,25 @@ const BlogPost = ({data}) => {
 					</table>
 					</div>
 					<div>
-						<h3 className='text-left'>Yeasts</h3>
+						<h3 className='text-left'>Yeast</h3>
 						<table className='table-auto text-xs'>
 						<thead>
 							<tr>
 								<th className='p-0'>Amount</th>
-								<th className='p-0'>Variety</th>
+								<th className='p-0'>Name</th>
+								<th className='p-0'>Attenuation</th>
+								<th className='p-0'>Flocculation</th>
 								<th className='p-0'>Type</th>
-								<th className='p-0'>Use</th>
-								<th className='p-0'>Time</th>
-								<th className='p-0'>Bill %</th>
 							</tr>
 						</thead>
 						<tbody>
-							{recipe.hops.hop.map((hop) => {
-								return (
-									<tr>
-										<td className='border'>{`${hop.amount*1000} g`}</td>
-										<td className='border'>{hop.name}</td>
-										<td className='border'>{hop.form}</td>
-										<td className='border'>{hop.use}</td>
-										<td className='border'>{`${hop.time} min`}</td>
-										<td className='border'>{`${calculateBill(recipe.hops.hop, hop.amount)} %`}</td>
-								</tr>
-								)
-							})}
+							<tr>
+								<td className='border'>{`${recipe.yeasts.yeast.amount*10} each`}</td>
+								<td className='border'>{recipe.yeasts.yeast.name}</td>
+								<td className='border'>{`${recipe.yeasts.yeast.attenuation} %`}</td>
+								<td className='border'>{recipe.yeasts.yeast.flocculation}</td>
+								<td className='border'>{`${recipe.yeasts.yeast.type} min`}</td>
+							</tr>
 						</tbody>
 					</table>
 					</div>
@@ -167,14 +177,10 @@ export const pageQuery = graphql`
 						yeasts {
 							yeast {
 								amount
+								name
 								attenuation
-                flocculation
-                laboratory
-                max_reuse
-                max_temperature
-                min_temperature
-                name
-                type
+								flocculation
+								type
 							}
 						}
 					}

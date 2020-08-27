@@ -8,7 +8,7 @@ const ContactPage = () => (
     <SEO title='Contact' />
     <h1 className='mb-8'>Get in touch</h1>
       <p>Interested in our beer, and want to get in touch?</p> 
-      <p>Contact us on mail <a href='mailto:almroth.ulrik@gmail.com'>bunnyhops@hops.se</a></p>
+      <a className='hover:underline' href='mailto:almroth.ulrik@gmail.com'>Contact us on our e-mail</a>
   </Layout>
 )
 

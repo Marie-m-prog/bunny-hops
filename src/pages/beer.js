@@ -4,7 +4,7 @@ import Header from '../components/header'
 import Footer from '../components/footer';
 
 const BeerList = ({data}) => (
-    <div>
+    <div className='min-h-screen'>
       <Header siteTitle={data.site.siteMetadata.title} />
         <h1 className='text-center mt-6'>Our selection of craft beer</h1>
         <hr className='border-none h-px bg-gradient-to-r from-white via-gray-600 to-white w-4/5 mx-auto my-4'></hr>

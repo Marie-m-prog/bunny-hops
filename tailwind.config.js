@@ -10,6 +10,7 @@ module.exports = {
       maxWidth: {
         'logo': '4rem',
         '3xl': '48rem',
+        '4xl': '56rem',
       },
       extend: {
         colors: {
