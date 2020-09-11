@@ -7,7 +7,7 @@ const Footer = () => (
 			<div>
 				© {new Date().getFullYear()}
 			</div>
-			<a href='mailto:almroth.ulrik@gmail.com' className='py-2 hover:text-yellow-400'>Contact</a>
+			<a href='mailto:info@bunnyhops.com' className='py-2 hover:text-yellow-400'>Contact</a>
 			</div>
 		</footer>
 	</>
