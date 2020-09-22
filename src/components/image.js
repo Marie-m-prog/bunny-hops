@@ -11,7 +11,7 @@ const Image = ({siteTitle, headerText}) => {
           node {
             headerImage {
               fluid(maxWidth: 1920) {
-                ...GatsbyContentfulFluid_tracedSVG
+                ...GatsbyContentfulFluid
               }
             }
           }

@@ -37,7 +37,7 @@ query {
         slug
         image {
           fluid(maxWidth: 350, maxHeight: 400, resizingBehavior: FILL) {
-            ...GatsbyContentfulFluid_tracedSVG
+            ...GatsbyContentfulFluid
           }
         }
         recipe {
