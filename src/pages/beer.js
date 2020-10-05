@@ -33,6 +33,7 @@ query {
   allContentfulBeer {
     edges {
       node {
+        title
         id
         slug
         image {
