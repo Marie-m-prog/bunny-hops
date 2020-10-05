@@ -19,7 +19,7 @@ const BlogPost = ({data}) => {
 					<Img className='w-full w-1/2 rounded-md' fluid={data.beer.image.fluid} alt='test'/>
 				</div>
 				<div className='m-8 text-left w-1/2'>
-					<h1>{recipe.name}</h1>
+					<h1>{data.beer.title}</h1>
 					<p>{recipe.style.name}</p>
 					<p className='my-8'>{data.beer.description.description}</p>
 				</div>
@@ -141,6 +141,7 @@ export default BlogPost
 export const pageQuery = graphql`
 	query ($slug: String!){
 		beer: contentfulBeer(slug: {eq: $slug}) {
+			title
 			slug
 			description {
 				description
